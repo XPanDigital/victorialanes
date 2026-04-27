@@ -2,583 +2,242 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Dra. Victória Lanes | Lipo de Papada e Lifting de Pescoço - Porto Alegre</title>
 <meta name="description" content="Dra. Victória Lanes, Bucomaxilofacial em Porto Alegre. Referência em Lipo da Papada, Lifting do Pescoço, Contorno Cervical e Rejuvenescimento Facial. CRO 29104.">
 <meta name="theme-color" content="#121212">
 
-<!-- Google Fonts: Cormorant Garamond (Sofisticação Serifada) & DM Sans (Modernidade) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-  /* ── PALETA DE CORES PERSONALIZADA (CHARCOAL & CHAMPAGNE GOLD) ── */
+  /* ── PALETA DE CORES PERSONALIZADA ── */
   :root {
-    /* Tons Escuros (Base e Texto Principal) - Inspirado no modo escuro do print */
-    --text-dark: #121212;    /* Preto carvão profundo e luxuoso */
-    --text-muted: #666666;   /* Cinza sofisticado para textos secundários */
-    
-    /* Tons Claros (Fundos) */
-    --bg-creamy: #ffffff;    /* Branco puro para contraste limpo */
-    --bg-nude: #f8f5f2;      /* Off-white champagne muito sutil para seções secundárias */
-    
-    /* Tons de Destaque (Dourado Champagne) */
-    --accent: #cfa76e;       /* Dourado champagne elegante (Cor principal de ação) */
-    --accent-light: #eaddc5; /* Versão clara do dourado para fundos sutis */
-    --accent-deep: #a68550;  /* Versão mais escura e rica do dourado para hover/Ícones */
-    
+    --text-dark: #121212;
+    --text-muted: #666666;
+    --bg-creamy: #ffffff;
+    --bg-nude: #f8f5f2;
+    --accent: #cfa76e;
+    --accent-light: #eaddc5;
+    --accent-deep: #a68550;
     --white: #ffffff;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* Reset e Configurações Globais de Segurança contra Overflow */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-  html { scroll-behavior: smooth; }
-
-  body {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* Essencial para evitar rolagem lateral */
+    scroll-behavior: smooth;
     background: var(--bg-creamy);
     color: var(--text-dark);
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
-    overflow-x: hidden;
     line-height: 1.7;
   }
 
-  /* ── CURSOR PERSONALIZADO (Mantido para sofisticação) ── */
+  /* ── CURSOR PERSONALIZADO ── */
   body { cursor: none; }
   #cursor {
-    position: fixed;
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s;
-    transform: translate(-50%, -50%);
+    position: fixed; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s; transform: translate(-50%, -50%);
   }
   #cursor-ring {
-    position: fixed;
-    width: 32px; height: 32px;
-    border: 1px solid rgba(207, 167, 110, 0.3);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s;
+    position: fixed; width: 32px; height: 32px; border: 1px solid rgba(207, 167, 110, 0.3); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s;
   }
 
   /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 60px;
-    background: transparent;
-    transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s, box-shadow 0.4s;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 24px 60px; background: transparent; transition: all 0.4s ease;
   }
   nav.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    padding: 16px 60px;
-    border-bottom: 1px solid rgba(207, 167, 110, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 16px 60px; border-bottom: 1px solid rgba(207, 167, 110, 0.1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   }
   .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--text-dark);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-dark); text-decoration: none; text-transform: uppercase; display: flex; align-items: center; gap: 10px;
   }
-  /* Simulação do ícone V do logo */
   .nav-logo::before {
-      content: 'V';
-      display: inline-flex;
-      align-items: center; justify-content: center;
-      width: 32px; height: 32px;
-      background: var(--text-dark);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 18px;
-      font-family: 'Cormorant Garamond', serif;
+      content: 'V'; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--text-dark); color: var(--accent); font-weight: 700; font-size: 18px; font-family: 'Cormorant Garamond', serif;
   }
-
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-dark);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-    font-weight: 500;
-    position: relative;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; opacity: 0.7; transition: opacity 0.2s, color 0.2s; font-weight: 500; position: relative;
   }
-  .nav-links a::after {
-      content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s;
-  }
+  .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
   .nav-links a:hover { opacity: 1; color: var(--accent); }
   .nav-links a:hover::after { width: 100%; }
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh; display: grid; grid-template-columns: 1.1fr 0.9fr; position: relative; overflow: hidden;
   }
   .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 140px 60px 80px 100px;
-    position: relative;
-    z-index: 2;
-    background: var(--bg-creamy);
+    display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 80px 100px; position: relative; z-index: 2; background: var(--bg-creamy);
   }
   .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 1s 0.2s forwards;
-    font-weight: 600;
-    display: flex; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; opacity: 0; animation: fadeUp 1s 0.2s forwards; font-weight: 600; display: flex; align-items: center; gap: 12px;
   }
   .hero-eyebrow::before { content:''; width: 30px; height: 1px; background: var(--accent); }
-
   .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 5vw, 76px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text-dark);
-    opacity: 0;
-    animation: fadeUp 1s 0.4s forwards;
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 76px); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--text-dark); opacity: 0; animation: fadeUp 1s 0.4s forwards;
   }
-  .hero-title em {
-    font-style: italic;
-    color: var(--accent);
-    font-weight: 500;
-  }
+  .hero-title em { font-style: italic; color: var(--accent); font-weight: 500; }
   .hero-sub {
-    margin-top: 32px;
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--text-muted);
-    max-width: 480px;
-    opacity: 0;
-    animation: fadeUp 1s 0.6s forwards;
+    margin-top: 32px; font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 480px; opacity: 0; animation: fadeUp 1s 0.6s forwards;
   }
   .hero-cta {
-    margin-top: 52px;
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    opacity: 0;
-    animation: fadeUp 1s 0.8s forwards;
+    margin-top: 52px; display: flex; gap: 24px; align-items: center; opacity: 0; animation: fadeUp 1s 0.8s forwards;
   }
   .btn-primary {
-    display: inline-block;
-    padding: 18px 42px;
-    background: var(--text-dark);
-    color: var(--accent);
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid var(--text-dark);
-    font-weight: 600;
+    display: inline-block; padding: 18px 42px; background: var(--text-dark); color: var(--accent); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; border: 1px solid var(--text-dark); font-weight: 600;
   }
-  .btn-primary:hover {
-    background: transparent;
-    color: var(--text-dark);
-    border-color: var(--text-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
-  }
+  .btn-primary:hover { background: transparent; color: var(--text-dark); border-color: var(--text-dark); transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1); }
   .btn-ghost {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-dark);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 4px;
-    transition: color 0.2s, border-color 0.2s, transform 0.2s;
-    font-weight: 600;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 4px; transition: color 0.2s, border-color 0.2s, transform 0.2s; font-weight: 600;
   }
   .btn-ghost:hover { color: var(--accent); border-color: var(--accent-deep); transform: translateX(5px); }
-
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-    background: var(--text-dark);
-  }
-  .hero-image-wrap {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    animation: fadeIn 1.4s 0.3s forwards;
-  }
-  /* 
-     IMPORTANTE: Substitua esta imagem de fundo por uma foto profissional da Dra. Victória.
-  */
+  .hero-right { position: relative; overflow: hidden; background: var(--text-dark); }
+  .hero-image-wrap { position: absolute; inset: 0; opacity: 0; animation: fadeIn 1.4s 0.3s forwards; }
+  
+  /* FOTO PRINCIPAL */
   .hero-placeholder-bg {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--text-dark) 0%, #2c2c2c 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .hero-placeholder-bg::after {
-      content: ''; position: absolute; inset: 0;
-      /* Padrão sutil de fundo */
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0L0 20L20 40L40 20L20 0zm0 2.8L37.2 20L20 37.2L2.8 20L20 2.8z" fill="%23cfa76e" opacity="0.02"/></svg>') repeat;
+    width: 100%; height: 100%;
+    background-image: url('image_1.png'); 
+    background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative;
   }
 
   .hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 100px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    opacity: 0;
-    animation: fadeIn 1s 1.4s forwards;
+    position: absolute; bottom: 40px; left: 100px; display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); opacity: 0; animation: fadeIn 1s 1.4s forwards;
   }
   .hero-scroll-line {
-    width: 60px;
-    height: 1px;
-    background: var(--accent);
-    transform-origin: left;
-    animation: expandLine 1s 1.6s both;
+    width: 60px; height: 1px; background: var(--accent); transform-origin: left; animation: expandLine 1s 1.6s both;
   }
 
-  /* ── MARQUEE (Áreas de Atuação) ── */
+  /* ── MARQUEE ── */
   .marquee-section {
-    overflow: hidden;
-    background: var(--text-dark);
-    padding: 20px 0;
-    border-top: 1px solid rgba(207, 167, 110, 0.2);
-    border-bottom: 1px solid rgba(207, 167, 110, 0.2);
+    overflow: hidden; background: var(--text-dark); padding: 20px 0; border-top: 1px solid rgba(207, 167, 110, 0.2); border-bottom: 1px solid rgba(207, 167, 110, 0.2);
   }
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    white-space: nowrap;
-    animation: marquee 35s linear infinite;
-  }
+  .marquee-track { display: flex; gap: 0; white-space: nowrap; animation: marquee 35s linear infinite; }
   .marquee-item {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-style: italic;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    padding: 0 48px;
-    display: inline-flex;
-    align-items: center;
-    gap: 48px;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; letter-spacing: 0.05em; color: var(--accent); padding: 0 48px; display: inline-flex; align-items: center; gap: 48px; text-transform: uppercase; font-weight: 500;
   }
-  .marquee-item::before {
-    content: '✦'; /* Estrela/Brilho para sofisticação */
-    font-style: normal;
-    font-size: 16px;
-    color: var(--accent-deep);
-    opacity: 0.7;
-  }
+  .marquee-item::before { content: '✦'; font-style: normal; font-size: 16px; color: var(--accent-deep); opacity: 0.7; }
 
-  /* ── ABOUT (A Dra.) ── */
+  /* ── ABOUT ── */
   .about {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    min-height: 85vh;
-    background: var(--bg-creamy);
-    align-items: center;
+    display: grid; grid-template-columns: 1fr 1.1fr; min-height: 85vh; background: var(--bg-creamy); align-items: center;
   }
-  .about-image-col {
-    position: relative;
-    overflow: hidden;
-    height: 90%; /* Ajuste de altura */
-    min-height: 500px;
-  }
-  /* 
-     IMPORTANTE: Substitua esta imagem pela foto de perfil da Dra. Victória.
-  */
+  .about-image-col { position: relative; overflow: hidden; height: 90%; min-height: 500px; }
   .about-placeholder-bg {
-    width: 100%;
-    height: 100%;
-    /* Placeholder image - substituir pela foto real dela */
-    background-image: url('https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(20%); /* Um toque de sofisticação na foto */
+    width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; filter: grayscale(20%);
   }
-  
-  .about-accent-box {
-    position: absolute;
-    bottom: 40px;
-    right: -30px;
-    width: auto; min-width: 240px;
-    background: var(--text-dark);
-    color: var(--accent);
-    padding: 36px 40px;
-    font-family: 'Cormorant Garamond', serif;
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-  }
-  .about-accent-box .num {
-    font-size: 20px; font-weight: 400; line-height: 1.2; display: block; color: var(--white); font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;
-  }
-  .about-accent-box .label {
-    font-size: 28px; letter-spacing: -0.02em; color: var(--accent); margin-top: 4px; display: block; font-weight: 600; font-style: italic;
-  }
-  .about-content {
-    padding: 120px 80px 100px 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: var(--bg-creamy);
-  }
-  .section-tag {
-    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 12px;
-  }
+  .about-content { padding: 120px 80px 100px 100px; display: flex; flex-direction: column; justify-content: center; background: var(--bg-creamy); }
+  .section-tag { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
   .section-tag::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 400; line-height: 1.15; color: var(--text-dark); margin-bottom: 32px;
-  }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 400; line-height: 1.15; color: var(--text-dark); margin-bottom: 32px; }
   .section-title em { font-style: italic; color: var(--accent); font-weight: 500; }
-  .body-text {
-    font-size: 17px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; max-width: 560px;
-  }
+  .body-text { font-size: 17px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; max-width: 560px; }
   .body-text strong { color: var(--text-dark); font-weight: 600; }
   .divider { width: 100px; height: 1px; background: var(--accent); margin: 40px 0; opacity: 0.3; }
 
-  /* ── SERVICES (Procedimentos) ── */
-  .services {
-    padding: 140px 60px;
-    background: var(--bg-nude);
-  }
-  .services-header {
-    display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; padding: 0 40px;
-  }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
-  }
-  .service-card {
-    background: var(--white); padding: 60px 48px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(0, 0, 0, 0.03); box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-  }
-  /* Efeito de hover sofisticado: fundo escuro e texto claro */
-  .service-card:hover {
-    background: var(--text-dark); transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2); border-color: transparent;
-  }
-  /* Detalhe dourado no topo */
-  .service-card::before {
-      content: ''; position: absolute; top:0; left:0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
-  }
+  /* ── SERVICES ── */
+  .services { padding: 140px 60px; background: var(--bg-nude); }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; padding: 0 40px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .service-card { background: var(--white); padding: 60px 48px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(0, 0, 0, 0.03); box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+  .service-card:hover { background: var(--text-dark); transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2); border-color: transparent; }
+  .service-card::before { content: ''; position: absolute; top:0; left:0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
   .service-card:hover::before { transform: scaleX(1); }
-
-  .service-icon {
-    font-size: 40px; margin-bottom: 32px; display: block; color: var(--accent); transition: color 0.4s;
-  }
+  .service-icon { font-size: 40px; margin-bottom: 32px; display: block; color: var(--accent); transition: color 0.4s; }
   .service-card:hover .service-icon { color: var(--accent); }
-  .service-num {
-    font-family: 'Cormorant Garamond', serif; font-size: 14px; letter-spacing: 0.2em; color: var(--accent-deep); margin-bottom: 20px; font-weight: 600; transition: color 0.4s;
-  }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 14px; letter-spacing: 0.2em; color: var(--accent-deep); margin-bottom: 20px; font-weight: 600; transition: color 0.4s; }
   .service-card:hover .service-num { color: rgba(255,255,255,0.5); }
-  .service-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--text-dark); margin-bottom: 20px; line-height: 1.2; transition: color 0.4s;
-  }
+  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--text-dark); margin-bottom: 20px; line-height: 1.2; transition: color 0.4s; }
   .service-card:hover .service-name { color: var(--white); }
-  .service-desc {
-    font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 36px; flex-grow: 1; transition: color 0.4s;
-  }
+  .service-desc { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 36px; flex-grow: 1; transition: color 0.4s; }
   .service-card:hover .service-desc { color: rgba(255,255,255,0.7); }
-  .service-link {
-    font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.25em; color: var(--text-dark); text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s; font-weight: 700;
-  }
+  .service-link { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.25em; color: var(--text-dark); text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s; font-weight: 700; }
   .service-link::after { content: '→'; transition: transform 0.3s; font-family: sans-serif; color: var(--accent); }
   .service-card:hover .service-link { color: var(--accent); gap: 16px; }
   .service-card:hover .service-link::after { transform: translateX(6px); }
 
-
-  /* ── GALLERY (Resultados/Inspiração) ── */
-  .gallery {
-    padding: 140px 60px;
-    background: var(--bg-creamy);
-  }
-  .gallery-header {
-    text-align: center; margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto;
-  }
+  /* ── GALLERY ── */
+  .gallery { padding: 140px 60px; background: var(--bg-creamy); }
+  .gallery-header { text-align: center; margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto; }
   .gallery-header .section-tag { justify-content: center; }
-  .gallery-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 300px); gap: 20px;
-  }
-  .gallery-item {
-    overflow: hidden; position: relative; background: var(--text-dark);
-  }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 300px); gap: 20px; }
+  .gallery-item { overflow: hidden; position: relative; background: var(--text-dark); }
   .gallery-item.featured { grid-column: 1 / 3; grid-row: 1 / 3; }
-  /* Placeholders abstratos e elegantes */
-  .gallery-placeholder {
-      width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: linear-gradient(45deg, var(--text-dark), #2a2a2a); color: var(--accent); position: relative;
-  }
-  .gallery-placeholder::before {
-      content: ''; position: absolute; inset:0;
-      background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="%23cfa76e" opacity="0.2"/></svg>') repeat; opacity: 0.3;
-  }
-
+  .gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(45deg, var(--text-dark), #2a2a2a); color: var(--accent); position: relative; }
+  .gallery-placeholder::before { content: ''; position: absolute; inset:0; background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="%23cfa76e" opacity="0.2"/></svg>') repeat; opacity: 0.3; }
   .gal-icon { font-size: 32px; margin-bottom: 16px; color: var(--accent); position: relative; z-index: 1;}
   .gal-label { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: var(--white); position: relative; z-index: 1; letter-spacing: 0.05em;}
   .gallery-item.featured .gallery-placeholder { background: linear-gradient(45deg, #1a1a1a, var(--accent-deep)); }
-  .gallery-overlay {
-    position: absolute; inset: 0; background: rgba(18, 18, 18, 0.9); opacity: 0; transition: opacity 0.4s ease; display: flex; align-items: flex-end; padding: 32px; z-index: 2;
-  }
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(18, 18, 18, 0.9); opacity: 0; transition: opacity 0.4s ease; display: flex; align-items: flex-end; padding: 32px; z-index: 2; }
   .gallery-item:hover .gallery-overlay { opacity: 1; }
-  .gallery-overlay-text {
-    font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--accent); font-style: italic; letter-spacing: 0.05em;
-  }
+  .gallery-overlay-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--accent); font-style: italic; letter-spacing: 0.05em; }
 
-  /* ── TESTIMONIALS (Pacientes) ── */
-  .testimonials {
-    padding: 140px 60px; background: var(--text-dark); color: var(--white); position: relative; overflow: hidden;
-  }
-  .testimonials::before {
-      content: '“'; position: absolute; top: 60px; left: 5%; font-family: 'Cormorant Garamond', serif; font-size: 250px; color: var(--accent); opacity: 0.05; line-height: 0;
-  }
-  .testimonials-inner {
-    max-width: 850px; margin: 0 auto; text-align: center; position: relative; z-index: 2;
-  }
+  /* ── TESTIMONIALS ── */
+  .testimonials { padding: 140px 60px; background: var(--text-dark); color: var(--white); position: relative; overflow: hidden; }
+  .testimonials::before { content: '“'; position: absolute; top: 60px; left: 5%; font-family: 'Cormorant Garamond', serif; font-size: 250px; color: var(--accent); opacity: 0.05; line-height: 0; }
+  .testimonials-inner { max-width: 850px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
   .testimonials .section-tag { justify-content: center; color: var(--accent); }
   .testimonials .section-tag::before { background: var(--accent); }
-  .test-stars {
-    color: var(--accent); font-size: 18px; letter-spacing: 8px; margin-bottom: 40px;
-  }
-  .test-quote {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.35; font-style: italic; color: var(--bg-creamy); margin-bottom: 40px; opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; transform: translateY(20px);
-  }
+  .test-stars { color: var(--accent); font-size: 18px; letter-spacing: 8px; margin-bottom: 40px; }
+  .test-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.35; font-style: italic; color: var(--bg-creamy); margin-bottom: 40px; opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; transform: translateY(20px); }
   .test-quote.visible { opacity: 1; transform: translateY(0); }
-  .test-author {
-    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 600;
-  }
-  .test-nav {
-    display: flex; justify-content: center; gap: 16px; margin-top: 64px;
-  }
-  .test-dot {
-    width: 10px; height: 10px; border-radius: 50%; background: transparent; border: 1px solid rgba(207, 167, 110, 0.4); cursor: pointer; transition: all 0.3s ease; padding: 0;
-  }
-  .test-dot.active {
-    background: var(--accent); transform: scale(1.3); border-color: transparent;
-  }
+  .test-author { font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .test-nav { display: flex; justify-content: center; gap: 16px; margin-top: 64px; }
+  .test-dot { width: 10px; height: 10px; border-radius: 50%; background: transparent; border: 1px solid rgba(207, 167, 110, 0.4); cursor: pointer; transition: all 0.3s ease; padding: 0; }
+  .test-dot.active { background: var(--accent); transform: scale(1.3); border-color: transparent; }
 
-  /* ── PROCESS (A Jornada) ── */
-  .process {
-    padding: 140px 60px; background: var(--bg-creamy);
-  }
+  /* ── PROCESS ── */
+  .process { padding: 140px 60px; background: var(--bg-creamy); }
   .process-inner { max-width: 1200px; margin: 0 auto; }
   .process-header { text-align: center; margin-bottom: 100px; }
   .process-header .section-tag { justify-content: center; }
-  .process-steps {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 60px; position: relative;
-  }
-  /* Linha conectora dourada */
-  .process-steps::before {
-    content: ''; position: absolute; top: 35px; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right, transparent, var(--accent) 20%, var(--accent) 80%, transparent); opacity: 0.3; z-index: 0;
-  }
-  .process-step {
-    padding: 0 20px; text-align: center; position: relative; z-index: 1;
-  }
-  .step-circle {
-    width: 70px; height: 70px; border: 1px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 36px; background: var(--bg-creamy); font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; font-style: italic; color: var(--text-dark); transition: all 0.4s ease; box-shadow: 0 0 0 10px var(--bg-creamy);
-  }
-  .process-step:hover .step-circle {
-    background: var(--accent); color: var(--text-dark); border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(207, 167, 110, 0.3), 0 0 0 10px var(--bg-creamy);
-  }
-  .step-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: var(--text-dark); margin-bottom: 18px;
-  }
-  .step-desc {
-    font-size: 15px; line-height: 1.8; color: var(--text-muted);
-  }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 60px; position: relative; }
+  .process-steps::before { content: ''; position: absolute; top: 35px; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right, transparent, var(--accent) 20%, var(--accent) 80%, transparent); opacity: 0.3; z-index: 0; }
+  .process-step { padding: 0 20px; text-align: center; position: relative; z-index: 1; }
+  .step-circle { width: 70px; height: 70px; border: 1px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 36px; background: var(--bg-creamy); font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; font-style: italic; color: var(--text-dark); transition: all 0.4s ease; box-shadow: 0 0 0 10px var(--bg-creamy); }
+  .process-step:hover .step-circle { background: var(--accent); color: var(--text-dark); border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(207, 167, 110, 0.3), 0 0 0 10px var(--bg-creamy); }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: var(--text-dark); margin-bottom: 18px; }
+  .step-desc { font-size: 15px; line-height: 1.8; color: var(--text-muted); }
 
   /* ── CTA ── */
-  .cta-section {
-    padding: 160px 60px;
-    /* Fundo escuro luxuoso */
-    background: linear-gradient(to bottom, var(--text-dark), #1c1c1c); text-align: center; position: relative; overflow: hidden;
-  }
+  .cta-section { padding: 160px 60px; background: linear-gradient(to bottom, var(--text-dark), #1c1c1c); text-align: center; position: relative; overflow: hidden; }
   .cta-section .section-tag { color: var(--accent); justify-content: center; }
   .cta-section .section-tag::before { background: var(--accent); }
   .cta-section .section-title { color: var(--white); }
   .cta-section .section-title em { color: var(--accent); }
-  .cta-tagline {
-    font-size: 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 64px; line-height: 1.6;
-  }
-  .cta-buttons {
-    display: flex; justify-content: center; gap: 32px;
-  }
-  .btn-light {
-    display: inline-block; padding: 18px 48px; background: var(--accent); color: var(--text-dark); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; font-weight: 700; border: 1px solid var(--accent);
-  }
+  .cta-tagline { font-size: 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 64px; line-height: 1.6; }
+  .cta-buttons { display: flex; justify-content: center; gap: 32px; }
+  .btn-light { display: inline-block; padding: 18px 48px; background: var(--accent); color: var(--text-dark); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; font-weight: 700; border: 1px solid var(--accent); }
   .btn-light:hover { background: transparent; color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(207, 167, 110, 0.4); }
-  .btn-outline {
-    display: inline-block; padding: 18px 48px; border: 1px solid rgba(255, 255, 255, 0.3); color: var(--white); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; font-weight: 600;
-  }
+  .btn-outline { display: inline-block; padding: 18px 48px; border: 1px solid rgba(255, 255, 255, 0.3); color: var(--white); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; font-weight: 600; }
   .btn-outline:hover { border-color: var(--accent); color: var(--text-dark); background: var(--accent); transform: translateY(-3px); }
 
   /* ── FOOTER ── */
-  footer {
-    padding: 120px 60px 40px; background: #0e0e0e; color: rgba(255, 255, 255, 0.5);
-  }
-  .footer-grid {
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 80px; margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
+  footer { padding: 120px 60px 40px; background: #0e0e0e; color: rgba(255, 255, 255, 0.5); }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 80px; margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .footer-brand .nav-logo { color: var(--white); display: inline-flex; margin-bottom: 24px; }
   .footer-brand .nav-logo::before { background: var(--accent); color: var(--text-dark); }
   .footer-brand p { font-size: 15px; line-height: 1.8; max-width: 320px; margin-bottom: 32px; color: rgba(255,255,255,0.7);}
-  .footer-col h4 {
-    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600;
-  }
+  .footer-col h4 { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
   .footer-col ul { list-style: none; }
   .footer-col ul li { margin-bottom: 16px; }
-  .footer-col ul li a {
-    font-size: 14px; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s; letter-spacing: 0.05em; font-weight: 500; display: inline-block;
-  }
+  .footer-col ul li a { font-size: 14px; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s; letter-spacing: 0.05em; font-weight: 500; display: inline-block; }
   .footer-col ul li a:hover { color: var(--accent); transform: translateX(5px); }
   .footer-social { display: flex; gap: 16px; }
-  .social-link {
-    width: 48px; height: 48px; border: 1px solid rgba(207, 167, 110, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent); text-decoration: none; font-size: 20px; transition: all 0.3s ease; border-radius: 50%;
-  }
+  .social-link { width: 48px; height: 48px; border: 1px solid rgba(207, 167, 110, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent); text-decoration: none; font-size: 20px; transition: all 0.3s ease; border-radius: 50%; }
   .social-link:hover { border-color: var(--accent); color: var(--text-dark); background: var(--accent); transform: translateY(-3px); }
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.4);
-  }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.4); }
   .footer-bottom span:last-child { letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); opacity: 0.9; }
 
   /* ── ANIMATIONS ── */
@@ -594,36 +253,52 @@
 
   /* ── MOBILE RESPONSIVENESS ── */
   @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; } .hero-right { display: none; } .hero-left { padding: 160px 60px 100px; align-items: center; text-align: center; } .hero-scroll { display: none; } .hero-eyebrow::before { display: none; }
-      .about { grid-template-columns: 1fr; } .about-image-col { min-height: 500px; order: -1; } .about-accent-box { right: 50%; transform: translateX(50%); bottom: -30px; width: 90%; max-width: 400px; text-align: center; padding: 30px;} .about-content { padding: 100px 60px; }
-      .services-grid { grid-template-columns: 1fr; gap: 30px; } .service-card { padding: 50px 40px; align-items: center; text-align: center;} .service-card::before { display: none;}
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; } .gallery-item { height: 280px; } .gallery-item.featured { grid-column: 1 / 3; height: 400px; grid-row: auto; }
-      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 50px 30px; } .process-steps::before { display: none; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 50px; }
+      nav { padding: 20px 40px; }
+      .hero { grid-template-columns: 1fr; } 
+      .hero-right { display: none; } 
+      .hero-left { padding: 140px 40px 100px; align-items: center; text-align: center; } 
+      .hero-scroll { display: none; } 
+      .hero-eyebrow::before { display: none; }
+      .about { grid-template-columns: 1fr; } 
+      .about-image-col { min-height: 500px; order: -1; } 
+      .about-content { padding: 80px 40px; }
+      .services { padding: 100px 40px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } 
+      .gallery { padding: 100px 40px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; } 
+      .gallery-item { height: 280px; } 
+      .gallery-item.featured { grid-column: 1 / 3; height: 400px; grid-row: auto; }
+      .testimonials { padding: 100px 40px; }
+      .process { padding: 100px 40px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 50px 30px; } 
+      .process-steps::before { display: none; }
+      .cta-section { padding: 120px 40px; }
+      footer { padding: 100px 40px 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 50px; padding-bottom: 50px; margin-bottom: 50px;}
   }
+
   @media (max-width: 768px) {
-    nav { padding: 20px 30px; } nav.scrolled { padding: 15px 30px; } .nav-logo { font-size: 24px; } .nav-links { display: none; }
-    .hero-left { padding: 140px 30px 80px; } .hero-title { font-size: 42px; } .hero-sub { font-size: 16px; } .btn-primary, .btn-light, .btn-outline { padding: 16px 36px; width: 100%; text-align: center; } .hero-cta, .cta-buttons { flex-direction: column; width: 100%; gap: 20px;} .btn-ghost { width: auto; align-self: center; }
-    .marquee-item { font-size: 16px; padding: 0 30px; gap: 30px; } .marquee-item::before { font-size: 16px; }
-    .about-content { padding: 80px 30px; } .section-title { font-size: 36px; }
-    .services { padding: 100px 30px; } .services-header { padding: 0; text-align: center; align-items: center;}
-    .gallery { padding: 100px 30px; } .gallery-grid { gap: 15px; }
-    .testimonials { padding: 100px 30px; } .test-quote { font-size: 24px; }
-    .process { padding: 100px 30px; } .process-steps { grid-template-columns: 1fr; gap: 40px; }
-    .cta-section { padding: 120px 30px; }
-    footer { padding: 80px 30px 40px; } .footer-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; padding-bottom: 40px; text-align: center;} .footer-brand { align-items: center; display: flex; flex-direction: column; } .footer-social { justify-content: center; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    nav { padding: 16px 24px; } 
+    .nav-logo { font-size: 22px; } 
+    .nav-links { display: none; }
+    .hero-left { padding: 120px 24px 80px; } 
+    .hero-title { font-size: 38px; } 
+    .btn-primary, .btn-light, .btn-outline { padding: 16px 24px; width: 100%; text-align: center; } 
+    .hero-cta, .cta-buttons { flex-direction: column; width: 100%; gap: 16px;} 
+    .about-content { padding: 60px 24px; } 
+    .services-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center;} 
+    .footer-social { justify-content: center; } 
+    .footer-bottom { flex-direction: column; gap: 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- CURSOR CUSTOMIZADO -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- NAV -->
 <nav id="navbar">
-  <!-- Logo adaptado para Dra. Victória -->
   <a href="#" class="nav-logo">Dra. Victória Lanes</a>
   <ul class="nav-links">
     <li><a href="#sobre">A Dra.</a></li>
@@ -634,7 +309,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <span class="hero-eyebrow">Bucomaxilofacial • Estética Facial • Porto Alegre</span>
@@ -643,23 +317,13 @@
     </h1>
     <p class="hero-sub">Referência em Lipo de Papada e Lifting de Pescoço. Procedimentos de alta definição para um perfil rejuvenescido e harmônico, com segurança e sofisticação.</p>
     <div class="hero-cta">
-      <!-- Link direto para o WhatsApp da bio -->
       <a href="https://wa.me/+5551990089447" target="_blank" class="btn-primary">Agendar Avaliação</a>
       <a href="#procedimentos" class="btn-ghost">Ver Procedimentos</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-image-wrap">
-      <!-- 
-         IMPORTANTE: Substitua a imagem de fundo abaixo por uma foto profissional da Dra. Victória.
-      -->
-      <div class="hero-placeholder-bg" role="img" aria-label="Dra. Victória Lanes em atendimento">
-        <div style="text-align:center; color:var(--accent); opacity:0.7;">
-          <!-- Simulação do ícone V -->
-          <div style="font-family:'Cormorant Garamond',serif; font-size:100px; font-weight:700; margin-bottom:0; color:var(--accent); font-style: italic;">V</div>
-          <div style="font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.3em; text-transform:uppercase; font-weight:600;">Victória Lanes</div>
-        </div>
-      </div>
+      <div class="hero-placeholder-bg" role="img" aria-label="Dra. Victória Lanes em atendimento"></div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -668,7 +332,6 @@
   </div>
 </section>
 
-<!-- MARQUEE (Fita de Destaques) -->
 <div class="marquee-section">
   <div class="marquee-track">
     <span class="marquee-item">Lipo da Papada HD</span>
@@ -678,25 +341,16 @@
     <span class="marquee-item">Bucomaxilofacial</span>
     <span class="marquee-item">Harmonização Orofacial</span>
     <span class="marquee-item">Porto Alegre</span>
-    <!-- Repetição -->
     <span class="marquee-item">Lipo da Papada HD</span>
     <span class="marquee-item">Lifting de Pescoço</span>
     <span class="marquee-item">Contorno Cervical</span>
   </div>
 </div>
 
-<!-- ABOUT (A Dra.) -->
 <section class="about" id="sobre">
   <div class="about-image-col">
-    <!-- 
-       IMPORTANTE: Substitua a URL abaixo pela foto de perfil da Dra. Victória.
-    -->
     <div class="about-placeholder-bg" role="img" aria-label="Foto de perfil Dra. Victória Lanes"></div>
-    <div class="about-accent-box reveal">
-      <span class="num">CRO 29104</span>
-      <span class="label">Referência em Papada</span>
     </div>
-  </div>
   <div class="about-content">
     <p class="section-tag reveal">Sobre a Dra. Victória</p>
     <h2 class="section-title reveal reveal-delay-1">
@@ -709,7 +363,7 @@
       Em meu consultório em <strong>Porto Alegre</strong>, ofereço um atendimento personalizado, unindo conhecimento cirúrgico profundo às técnicas mais modernas de Lipo de Papada e Lifting Cervical para resultados definitivos e sofisticados.
     </p>
     <div class="divider reveal reveal-delay-3"></div>
-    <div style="display:flex; gap:48px;" class="reveal reveal-delay-3">
+    <div style="display:flex; gap:48px; flex-wrap: wrap;" class="reveal reveal-delay-3">
       <div>
         <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:var(--text-dark);">Bucomaxilo</div>
         <div style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:4px;">Especialista</div>
@@ -722,7 +376,6 @@
   </div>
 </section>
 
-<!-- SERVICES (Procedimentos) -->
 <section class="services" id="procedimentos">
   <div class="services-header">
     <div>
@@ -731,54 +384,44 @@
     </div>
   </div>
   <div class="services-grid">
-
-    <!-- Card 1: Lipo de Papada -->
     <div class="service-card reveal">
       <span class="service-icon">
-        <!-- Ícone sutil representando contorno facial -->
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11h8"/></svg>
       </span>
       <div class="service-num">01</div>
       <h3 class="service-name">Lipo da Papada &<br>Contorno Cervical</h3>
-      <p class="service-desc">Técnica refinada para remoção da gordura submentoniana, definindo a linha da mandíbula e eliminando o aspecto de "queixo duplo" para um perfil mais magro e elegante.</p>
+      <p class="service-desc">Técnica refinada para remoção da gordura submentoniana, definindo a linha da mandíbula e eliminando o aspecto de "queixo duplo".</p>
       <a href="#contato" class="service-link">Agendar Avaliação</a>
     </div>
 
-    <!-- Card 2: Lifting de Pescoço -->
     <div class="service-card reveal reveal-delay-1">
       <span class="service-icon">
-        <!-- Ícone representando lifting/rejuvenescimento -->
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l-1.42-1.42"/><path d="M2 12h2"/><path d="M22 12h-2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l-1.42 1.42"/></svg>
       </span>
       <div class="service-num">02</div>
       <h3 class="service-name">Lifting de Pescoço &<br>Rejuvenescimento</h3>
-      <p class="service-desc">Procedimentos para tratar a flacidez da pele e musculatura do pescoço, devolvendo a firmeza e suavizando os sinais do envelhecimento na região cervical.</p>
+      <p class="service-desc">Procedimentos para tratar a flacidez da pele e musculatura do pescoço, devolvendo a firmeza e suavizando sinais do envelhecimento.</p>
       <a href="#contato" class="service-link">Saiba Mais</a>
     </div>
 
-    <!-- Card 3: Bucomaxilofacial -->
     <div class="service-card reveal reveal-delay-2">
       <span class="service-icon">
-        <!-- Ícone representando estrutura óssea/facial -->
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19c-4.418 0-8-3.582-8-8V5l8-3 8 3v6c0 4.418-3.582 8-8 8z"/><path d="M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M12 19v3"/></svg>
       </span>
       <div class="service-num">03</div>
       <h3 class="service-name">Cirurgia<br>Bucomaxilofacial</h3>
-      <p class="service-desc">Tratamentos cirúrgicos funcionais e estéticos da face, baseados em profundo conhecimento da anatomia óssea e muscular para resultados seguros e duradouros.</p>
+      <p class="service-desc">Tratamentos cirúrgicos funcionais e estéticos da face, baseados em profundo conhecimento da anatomia óssea e muscular.</p>
       <a href="#contato" class="service-link">Saiba Mais</a>
     </div>
-
   </div>
 </section>
 
-<!-- GALLERY (Resultados/Inspiração) -->
 <section class="gallery" id="resultados">
   <div class="gallery-header reveal">
     <p class="section-tag">Resultados Reais</p>
     <h2 class="section-title">A transformação do seu <em>perfil</em></h2>
   </div>
   <div class="gallery-grid">
-    <!-- Item em destaque -->
     <div class="gallery-item featured reveal">
       <div class="gallery-placeholder">
         <div class="gal-icon">
@@ -788,7 +431,6 @@
       </div>
       <div class="gallery-overlay"><span class="gallery-overlay-text">Contorno Marcado</span></div>
     </div>
-    
     <div class="gallery-item reveal reveal-delay-1">
       <div class="gallery-placeholder">
         <div class="gal-icon">
@@ -798,7 +440,6 @@
       </div>
       <div class="gallery-overlay"><span class="gallery-overlay-text">Sem Flacidez</span></div>
     </div>
-    
     <div class="gallery-item reveal reveal-delay-2">
       <div class="gallery-placeholder">
         <div class="gal-icon">
@@ -808,34 +449,12 @@
       </div>
       <div class="gallery-overlay"><span class="gallery-overlay-text">Perfil Harmônico</span></div>
     </div>
-    
-    <div class="gallery-item reveal reveal-delay-1">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <div class="gal-label">Rejuvenescimento</div>
-      </div>
-      <div class="gallery-overlay"><span class="gallery-overlay-text">Aparência Leve</span></div>
-    </div>
-    
-    <div class="gallery-item reveal reveal-delay-2">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="gal-label">Autoestima</div>
-      </div>
-      <div class="gallery-overlay"><span class="gallery-overlay-text">Confiança Renovada</span></div>
-    </div>
   </div>
   <div style="text-align:center; margin-top:60px;" class="reveal">
-    <!-- Link direto para o Instagram -->
     <a href="https://www.instagram.com/dravictorialanes/" target="_blank" class="btn-primary">Ver Antes e Depois no Instagram</a>
   </div>
 </section>
 
-<!-- TESTIMONIALS (Depoimentos) -->
 <section class="testimonials">
   <div class="testimonials-inner">
     <p class="section-tag reveal">Depoimentos</p>
@@ -854,7 +473,6 @@
   </div>
 </section>
 
-<!-- PROCESS (A Jornada) -->
 <section class="process" id="jornada">
   <div class="process-inner">
     <div class="process-header reveal">
@@ -886,7 +504,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section" id="contato">
   <p class="section-tag reveal">Invista na sua autoestima</p>
   <h2 class="section-title reveal reveal-delay-1">
@@ -894,14 +511,11 @@
   </h2>
   <p class="cta-tagline reveal reveal-delay-2">Dê o primeiro passo para conquistar o contorno facial que você sempre desejou. Atendimento exclusivo e personalizado.</p>
   <div class="cta-buttons reveal reveal-delay-3">
-    <!-- Link para WhatsApp da bio -->
     <a href="https://wa.me/+5551990089447" target="_blank" class="btn-light">Chamar no WhatsApp</a>
-    <!-- Link direto do Instagram -->
     <a href="https://www.instagram.com/dravictorialanes/" target="_blank" class="btn-outline">Seguir no Instagram</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -970,27 +584,16 @@
         requestAnimationFrame(animateRing);
       }
       animateRing();
-      // Efeito magnético/hover em elementos interativos
       document.querySelectorAll('a, button, .service-card, .gallery-item, .process-step').forEach(el => {
         el.addEventListener('mouseenter', () => {
-          ring.style.width = '64px';
-          ring.style.height = '64px';
-          ring.style.borderColor = 'var(--accent)';
-          ring.style.backgroundColor = 'rgba(207, 167, 110, 0.05)';
-          cursor.style.transform = 'translate(-50%,-50%) scale(0.5)';
+          ring.style.width = '64px'; ring.style.height = '64px'; ring.style.borderColor = 'var(--accent)'; ring.style.backgroundColor = 'rgba(207, 167, 110, 0.05)'; cursor.style.transform = 'translate(-50%,-50%) scale(0.5)';
         });
         el.addEventListener('mouseleave', () => {
-          ring.style.width = '32px';
-          ring.style.height = '32px';
-          ring.style.borderColor = 'rgba(207, 167, 110, 0.3)';
-          ring.style.backgroundColor = 'transparent';
-          cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+          ring.style.width = '32px'; ring.style.height = '32px'; ring.style.borderColor = 'rgba(207, 167, 110, 0.3)'; ring.style.backgroundColor = 'transparent'; cursor.style.transform = 'translate(-50%,-50%) scale(1)';
         });
       });
   } else {
-      cursor.style.display = 'none';
-      ring.style.display = 'none';
-      document.body.style.cursor = 'auto';
+      cursor.style.display = 'none'; ring.style.display = 'none'; document.body.style.cursor = 'auto';
   }
 
   // NAVBAR SCROLL EFFECT
